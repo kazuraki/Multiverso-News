@@ -1,0 +1,161 @@
+:root {
+    color: black;
+    --bg-principal: #0D0E15;
+    --bg-card: #1A1C28;
+    --yellow-edgerunner: #FFE600;
+    --cyan-neon: #00F0FF;
+    --magenta-lucy: #FF0055;
+    --text-color: #F0F4F8;
+    --purple-sandevistan: #3d1457;
+    --purple-light: #D066FF;
+    --purple-nightcity: #5B00B2;
+}
+
+@font-face {
+    font-family: 'CyberFont';
+    src: url('sd-dystopian-font/Sddystopiandemo-GO7xa.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-card);
+}
+
+.barra {
+    width: 100%;
+    height: 80px;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 40px;
+    margin: 0;
+    box-sizing: border-box;
+
+    border-bottom: 3px solid var(--purple-light);
+    box-shadow: 0 4px 25px var(--purple-nightcity);
+
+}
+
+.barra h1, .barra p {
+    margin: 0;
+    padding: 0;
+    font-family: 'CyberFont', sans-serif;
+    font-weight: 900;
+    font-size: 3.6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background-color: var(--bg-principal);
+    
+    color: var(--bg-card);
+    text-shadow: 
+        -2px  2px 0px var(--cyan-neon),
+         2px -2px 0px var(--magenta-lucy);
+        
+         /*Linka a animacao criada*/
+         animation: neonGlow 1.5s ease-in-out infinite alternate;
+}
+
+/*Parte essencial para se criar animacoes*/
+@keyframes neonGlow {
+    from {
+        text-shadow:
+            0 0 5px #fff,
+            0 0 10px var(--cyan-neon),
+            0 0 20px var(--cyan-neon),
+            0 0 40px var(--magenta-lucy);
+    }
+    to {
+        text-shadow:
+            0 0 2px #fff,
+            0 0 5px var(--cyan-neon),
+            0 0 15px var(--cyan-neon),
+            0 0 25px var(--magenta-lucy),
+            0 0 50px var(--magenta-lucy);
+    }
+}
+
+.banner {
+    width: 100%;
+    height: 450px;
+    background-image: url("img/1348663.jpeg");
+    background-size: cover;
+    background-position: center;
+    transition: all .2s;
+    margin: 0 auto;
+    box-sizing: border-box;
+    
+}
+
+.noticia1 {
+    width: 400px;
+    height: 300px;
+    background-color: #000000;
+    padding: 60px;
+    gap: 40px;
+}
+
+.feed-container {
+    max-width: 90%;
+    margin: 30px auto;
+    padding: 25px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: start;
+    border: 1px solid #00F0FF33;
+    border-radius: 1%;
+
+}
+
+.card-noticia {
+    background: var(--purple-sandevistan); 
+    padding: 20px;
+    transition: all 0.3s ease;
+    
+    
+}
+
+.card-noticia:hover {
+    border-color: var(--cyan-neon);
+    box-shadow: 0 0 15px var(--cyan-neon);
+    background-color: var(--purple-nightcity);
+}
+
+h1 {
+    color: var(--cyan-neon);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+h1:hover{
+    color: var(--magenta-lucy);
+}
+
+.card-pequeno {
+    grid-column: span 1;
+    min-height: 200px;
+}
+
+.card-medio {
+    grid-column: span 2;
+    min-height: 250px;
+}
+
+.card-grande {
+    grid-column: span 3;
+    grid-row: span 2;
+    min-height: 350px;
+}
